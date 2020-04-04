@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * @author wsHawk
@@ -15,20 +16,21 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "user")
-public class User {
+public class User  {
     @Id
-    @Column(name = "id",columnDefinition="bigint COMMENT '主键，自动生成'")
+    @Column(name = "uid",columnDefinition="bigint COMMENT '主键，自动生成'")
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private  long id;
+    @Getter
+    private  long uid;
 
     @Setter
     @Getter
-    @Column(name = "user_no",columnDefinition="varchar(32) COMMENT '用户账号'")
+    @Column( unique =true, name = "user_no",columnDefinition="varchar(32) COMMENT '用户账号'")
     private  String userNo;
 
     @Setter
     @Getter
-    @Column(name = "passwoed",columnDefinition="varchar(32) COMMENT '用户密码'")
+    @Column(name = "password",columnDefinition="varchar(32) COMMENT '用户密码'")
     private  String pwd;
 
     @Setter
@@ -53,13 +55,13 @@ public class User {
 
     @Setter
     @Getter
-    @Column(name = "role_no",columnDefinition="varchar(32) COMMENT '角色编号'")
-    private String roleNo;
+    private byte state;//用户状态,0:创建未认证（比如没有激活，没有输入验证码等等）--等待验证的用户 , 1:正常状态,2：用户被锁定.
 
-    @Setter
+    @ManyToMany(fetch= FetchType.EAGER)//立即从数据库中进行加载数据;
+    // 建立用户角色中间表@JoinTable
+    @JoinTable(name = "SysUserRole", joinColumns = { @JoinColumn(name = "uid") }, inverseJoinColumns ={@JoinColumn(name = "roleId") })
     @Getter
-    @Column(name = "permission_no",columnDefinition="varchar(32) COMMENT '权限编号'")
-    private String perNo;
+    private List<SysRole> roleList;// 一个用户具有多个角色
 
     @Setter
     @Getter

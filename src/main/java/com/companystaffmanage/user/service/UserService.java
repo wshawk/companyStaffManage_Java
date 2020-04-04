@@ -1,6 +1,7 @@
 package com.companystaffmanage.user.service;
 
 import org.springframework.stereotype.Service;
+import com.companystaffmanage.entity.User;
 
 /**
  * @author wsHawk
@@ -13,4 +14,8 @@ import org.springframework.stereotype.Service;
 public interface UserService {
 
     Boolean loginCheck(String userName,String password);
+
+    Boolean changePassword(String userNo,String password);
+
+    public User findByUsername(String userName);
 }
