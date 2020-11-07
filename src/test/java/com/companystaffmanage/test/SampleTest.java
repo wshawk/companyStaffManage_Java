@@ -1,5 +1,6 @@
 package com.companystaffmanage.test;
 
+import com.companystaffmanage.common.entity.TestUser;
 import com.companystaffmanage.common.entity.User;
 import com.companystaffmanage.login.mapper.UserMapper;
 import org.junit.Assert;
@@ -28,8 +29,8 @@ public class SampleTest {
     @Test
     public void testSelect() {
         System.out.println(("----- selectAll method test ------"));
-        List<User> userList = userMapper.selectList(null);
-        Assert.assertEquals(5, userList.size());
+        List<TestUser> userList = userMapper.selectList(null);
+        Assert.assertEquals(1, userList.size());
         userList.forEach(System.out::println);
     }
 
