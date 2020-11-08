@@ -1,6 +1,7 @@
 package com.companystaffmanage.login.controller;
 
 import com.companystaffmanage.common.entity.TestUser;
+import com.companystaffmanage.common.entity.TestVO;
 import com.companystaffmanage.common.response.R;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,8 +32,11 @@ public class LoginController {
            testUser.setName("test");
            list.add(testUser);
        }
+        TestVO vo = new TestVO();
+       vo.setList(list);
+       vo.setName("tetList");
 //        Map<String,Object> res = new HashMap<>();
 //        res.put("testUser",testUser);
-        return R.success(list);
+        return R.success(vo);
     }
 }

@@ -13,7 +13,7 @@ import java.io.Serializable;
  * @since 2020/11/7 23:44
  */
 @Getter
-public class R<T> implements Serializable {
+public class R implements Serializable {
     private static final long serialVersionUID = 6350328271121587814L;
 
     private static final int SUCCESS_CODE = 200;
@@ -58,5 +58,14 @@ public class R<T> implements Serializable {
 
     public static R fail(){
         return new R(FAIL_CODE, FAIL_MESSAGE, null);
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "code=" + code +
+                ", message='" + message + '\'' +
+                ", data=" + data +
+                '}';
     }
 }
