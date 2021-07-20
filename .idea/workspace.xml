@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e129d0e3-9150-4142-bed3-742afa641715" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/companystaffmanage/common/entity/Test.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../CodeTools/Maven/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="E:\CodeTools\Maven\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+    <option name="skipTests" value="true" />
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="1jwuAg6tN8JW7pIC0Kxj7C7LdMx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../CodeForGithub/ml-blog/pom.xml" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.companystaffmanage.common.entity.Test" />
+      <module name="companystaffmanage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.companystaffmanage.common.entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestHello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.companystaffmanage.common.entity.TestHello" />
+      <module name="companystaffmanage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.companystaffmanage.common.entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompanystaffmanageApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="companystaffmanage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.companystaffmanage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.companystaffmanage" />
+      <option name="MAIN_CLASS_NAME" value="com.companystaffmanage.CompanystaffmanageApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SampleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="companystaffmanage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.companystaffmanage.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.companystaffmanage.test" />
+      <option name="MAIN_CLASS_NAME" value="com.companystaffmanage.test.SampleTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SampleTest.testSelect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="companystaffmanage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.companystaffmanage.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.companystaffmanage.test" />
+      <option name="MAIN_CLASS_NAME" value="com.companystaffmanage.test.SampleTest" />
+      <option name="METHOD_NAME" value="testSelect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompanystaffmanageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="companystaffmanage" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.companystaffmanage.CompanystaffmanageApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.TestHello" />
+        <item itemvalue="JUnit.SampleTest.testSelect" />
+        <item itemvalue="JUnit.CompanystaffmanageApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.SampleTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e129d0e3-9150-4142-bed3-742afa641715" name="Default Changelist" comment="" />
+      <created>1604727332836</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604727332836</updated>
+      <workItem from="1604727338982" duration="10271000" />
+      <workItem from="1604738086062" duration="3309000" />
+      <workItem from="1604763638727" duration="3800000" />
+      <workItem from="1604813911501" duration="1738000" />
+      <workItem from="1606625531076" duration="1017000" />
+      <workItem from="1607836491738" duration="2371000" />
+      <workItem from="1619103729646" duration="324000" />
+      <workItem from="1626790124158" duration="1902000" />
+    </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1604734898113</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604734898113</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update">
+      <created>1604736740739</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604736740739</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update">
+      <created>1604755737248</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604755737248</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update">
+      <created>1604767247859</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604767247859</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update">
+      <created>1604815467997</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604815467997</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="842" y="402" key="#Notifications" timestamp="1626791499417">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="842" y="402" key="#Notifications/0.0.1920.1080@0.0.1920.1080" timestamp="1626791499417" />
+    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1626791412221">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1626791412221" />
+    <state x="739" y="280" key="FileChooserDialogImpl" timestamp="1626791975036">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="739" y="280" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1626791975036" />
+    <state x="334" y="200" key="new project wizard" timestamp="1626792216253">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="334" y="200" key="new project wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1626792216253" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/companystaffmanage/user/service/impl/UserServiceImpl.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/companystaffmanage/user/controller/UserController.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
