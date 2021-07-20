@@ -15,12 +15,19 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
-        <mybatis-plus.version>3.4.3.1</mybatis-plus.version>
+        <mybatis-plus.version>3.4.0</mybatis-plus.version>
+        <mybatis-plus.annotation.version>3.4.0</mybatis-plus.annotation.version>
         <mysql-connect.version>8.0.25</mysql-connect.version>
         <druid.version>1.2.6</druid.version>
+        <lombok.version>1.18.20</lombok.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -49,6 +56,16 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-annotation</artifactId>
+            <version>${mybatis-plus.annotation.version}</version>
         </dependency>
     </dependencies>
     <!--依赖管理-->
