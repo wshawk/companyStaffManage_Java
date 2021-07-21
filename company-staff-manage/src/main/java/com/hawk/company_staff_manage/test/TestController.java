@@ -2,6 +2,7 @@ package com.hawk.company_staff_manage.test;
 
 import com.hawk.company_staff_manage.common.R;
 import com.hawk.company_staff_manage.test.service.TestService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ import javax.annotation.Resource;
  * @Description: 测试类
  * @since 2021/7/21 0:10
  */
+@Slf4j
 @RestController
 @RequestMapping("/test")
 public class TestController {
@@ -22,6 +24,7 @@ public class TestController {
 
     @RequestMapping("/get_count")
     public R<Integer> getStaffCount(){
+        log.info("TestController getStaffCount Method start");
         return R.success(testService.count());
     }
 

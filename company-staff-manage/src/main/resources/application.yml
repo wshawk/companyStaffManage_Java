@@ -16,13 +16,8 @@ spring:
       max-wait-millis: 150                # 等待连接获取的最大超时时间
 mybatis-plus:
   mapper-locations: classpath*:/mybatis/**/*Mapper.xml
-  #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.hawk.company_staff_manage.common.entity.*
+  typeAliasesPackage: com.hawk.company_staff_manage.common.entity.* # 实体扫描，多个package用逗号或者分号分隔
   configuration:
-    #开启下划线转驼峰
-    map-underscore-to-camel-case: true
-#    #开启返回map结果集的下划线转驼峰
-#    object-wrapper-factory: com.baomidou.mybatisplus.extension.MybatisMapWrapperFactory
-#  global-config:
-#    db-config:
-#      id-type: auto
+    map-underscore-to-camel-case: true # 开启下划线转驼峰
+logging:
+  config: classpath:log4j2.xml
