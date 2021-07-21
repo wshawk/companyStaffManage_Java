@@ -19,8 +19,13 @@ public class TestController {
     @Resource
     TestService testService;
 
-    @RequestMapping("/get")
-    public Integer getUserCount(){
+    @RequestMapping("/get_count")
+    public Integer getStaffCount(){
         return testService.count();
+    }
+
+    @RequestMapping("/get_staff_no")
+    public String getStaffNo(){
+        return testService.getById(1L).getStaffNo();
     }
 }
