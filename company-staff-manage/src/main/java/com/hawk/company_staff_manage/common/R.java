@@ -14,16 +14,16 @@ public class R implements Serializable {
 
     private static final int SUCCESS_CODE = 20000;
     private static final String SUCCESS_MESSAGE = "success";
-    private static final int FAIL_CODE = 50000;
+    private static final int FAIL_CODE = 30000;
     private static final String FAIL_MESSAGE = "fail";
     /**
      * 状态码
      */
-    private int code;
+    private final int code;
     /**
      * 提示信息
      */
-    private String message;
+    private final String message;
     /**
      * 结果
      */
