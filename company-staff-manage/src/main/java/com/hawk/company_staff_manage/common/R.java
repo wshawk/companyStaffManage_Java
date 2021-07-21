@@ -61,6 +61,10 @@ public final class R<T> implements Serializable {
     public static <T> R<T> fail(int code, String errorMessage){
         return new R(code, errorMessage,null);
     }
+
+    public static <T> R<T> fail(RP rp){
+        return new R(rp.getCode(), rp.getMsg(),null);
+    }
     @Override
     public String toString() {
         return "{" +
