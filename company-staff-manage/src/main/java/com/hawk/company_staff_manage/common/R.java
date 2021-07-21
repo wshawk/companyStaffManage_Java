@@ -6,62 +6,99 @@ import java.io.Serializable;
  * @author wsHawk
  * @Title: R
  * @ProjectName company-staff-manage
- * @Description: TODO
+ * @Description: 全局统一返回类
  * @since 2021/7/20 22:46
  */
-public class R implements Serializable {
+public final class R<T> implements Serializable {
     private static final long serialVersionUID = 6350328271121587814L;
 
-    private static final int SUCCESS_CODE = 20000;
-    private static final String SUCCESS_MESSAGE = "success";
-    private static final int FAIL_CODE = 30000;
-    private static final String FAIL_MESSAGE = "fail";
+    private static final int SUCCESS_CODE = RP.SUCCESS.getCode();
+    private static final String SUCCESS_MESSAGE = RP.SUCCESS.getMsg();
+    private static final int FAIL_CODE = RP.FAIL.getCode();
+    private static final String FAIL_MESSAGE = RP.FAIL.getMsg();
     /**
      * 状态码
      */
-    private final int code;
+    private int code;
     /**
      * 提示信息
      */
-    private final String message;
+    private String msg;
     /**
      * 结果
      */
     private Object data;
 
-    private R(int code, String message){
+    private R(){
+
+    }
+    private R(int code, String msg){
         this.code = code;
-        this.message = message;
+        this.msg = msg;
     }
 
-    private R(int code, String message, Object data){
+    private R(int code, String msg, Object data){
         this.code = code;
-        this.message = message;
+        this.msg = msg;
         this.data = data;
     }
-
-    public static R success(Object data){
-        return new R(SUCCESS_CODE,SUCCESS_MESSAGE,data);
-    }
-
-    public static R success(){
+    public static <T> R<T> success(){
         return new R(SUCCESS_CODE, SUCCESS_MESSAGE,null);
     }
 
-    public static R fail(int code, String errorMessage){
-        return new R(code, errorMessage,null);
+    public static <T> R<T> success(Object data){
+        return new R(SUCCESS_CODE,SUCCESS_MESSAGE,data);
     }
 
-    public static R fail(){
+    public static <T> R<T> fail(){
         return new R(FAIL_CODE, FAIL_MESSAGE, null);
     }
 
+    public static <T> R<T> fail(String errorMessage){
+        return new R(FAIL_CODE, errorMessage,null);
+    }
+
+    public static <T> R<T> fail(int code, String errorMessage){
+        return new R(code, errorMessage,null);
+    }
     @Override
     public String toString() {
         return "{" +
                 "code=" + code +
-                ", message='" + message + '\'' +
+                ", msg='" + msg + '\'' +
                 ", data=" + data +
                 '}';
+    }
+
+    public boolean checkSuccess(){
+        return this.code == SUCCESS_CODE;
+    }
+
+    public boolean checkFailure(){
+        return !checkSuccess();
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 }

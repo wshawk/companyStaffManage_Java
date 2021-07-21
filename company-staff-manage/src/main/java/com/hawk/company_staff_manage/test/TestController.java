@@ -1,5 +1,6 @@
 package com.hawk.company_staff_manage.test;
 
+import com.hawk.company_staff_manage.common.R;
 import com.hawk.company_staff_manage.test.service.TestService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +11,7 @@ import javax.annotation.Resource;
  * @author wsHawk
  * @Title: TestController
  * @ProjectName company-staff-manage
- * @Description: TODO
+ * @Description: 测试类
  * @since 2021/7/21 0:10
  */
 @RestController
@@ -20,12 +21,12 @@ public class TestController {
     TestService testService;
 
     @RequestMapping("/get_count")
-    public Integer getStaffCount(){
-        return testService.count();
+    public R<Integer> getStaffCount(){
+        return R.success(testService.count());
     }
 
     @RequestMapping("/get_staff_no")
-    public String getStaffNo(){
-        return testService.getById(1L).getStaffNo();
+    public R<String> getStaffNo(){
+        return R.success(testService.getById(1L).getStaffNo());
     }
 }
