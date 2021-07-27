@@ -1,7 +1,7 @@
 package com.hawk.company_staff_manage.test.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.hawk.company_staff_manage.common.entity.user.User;
+import com.hawk.company_staff_manage.common.entity.staff.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

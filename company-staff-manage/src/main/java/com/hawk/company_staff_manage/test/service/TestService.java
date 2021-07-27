@@ -1,7 +1,7 @@
 package com.hawk.company_staff_manage.test.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.hawk.company_staff_manage.common.entity.user.User;
+import com.hawk.company_staff_manage.common.entity.staff.User;
 
 /**
  * @author wsHawk

@@ -1,10 +1,9 @@
-package com.hawk.company_staff_manage.common.entity.user;
+package com.hawk.company_staff_manage.common.entity.staff;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-import org.springframework.context.annotation.Primary;
 
 import java.time.LocalDateTime;
 
@@ -16,8 +15,8 @@ import java.time.LocalDateTime;
  * @since 2021/7/20 23:49
  */
 @Data
-@TableName("user")
-public class User {
+@TableName("staff")
+public class Staff {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     /**
@@ -27,19 +26,19 @@ public class User {
     /**
      * 个人基础信息表id
      */
-    private Long baseInfoId;
+    private Long staffBaseInfoId;
     /**
      * 公司任职信息表id
      */
-    private Long companyInfoId;
+    private Long staffCompanyInfoId;
     /**
      * 密码
      */
     private String password;
     /**
-     * 角色：0-管理员，1-普通用户
+     * 角色表id
      */
-    private Integer role;
+    private Integer roleId;
     /**
      * 创建人
      */

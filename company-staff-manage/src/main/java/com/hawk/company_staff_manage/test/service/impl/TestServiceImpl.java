@@ -1,7 +1,7 @@
 package com.hawk.company_staff_manage.test.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.hawk.company_staff_manage.common.entity.user.User;
+import com.hawk.company_staff_manage.common.entity.staff.User;
 import com.hawk.company_staff_manage.test.mapper.UserMapper;
 import com.hawk.company_staff_manage.test.service.TestService;
 import org.springframework.stereotype.Service;

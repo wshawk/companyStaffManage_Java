@@ -20,6 +20,7 @@
         <mysql-connect.version>8.0.25</mysql-connect.version>
         <druid.version>1.2.6</druid.version>
         <lombok.version>1.18.20</lombok.version>
+        <shiro.version>1.7.1</shiro.version>
     </properties>
 
     <dependencies>
@@ -81,7 +82,12 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus.starter.version}</version>
         </dependency>
-
+        <!--shiro-->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring-boot-starter</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->
 <!--            <artifactId>spring-boot-starter-security</artifactId>-->
