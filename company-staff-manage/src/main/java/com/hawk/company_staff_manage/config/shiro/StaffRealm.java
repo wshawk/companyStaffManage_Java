@@ -7,7 +7,7 @@ import com.hawk.company_staff_manage.common.RP;
 import com.hawk.company_staff_manage.common.constants.staff.StaffConstant;
 import com.hawk.company_staff_manage.common.entity.staff.Staff;
 import com.hawk.company_staff_manage.common.exception.BizException;
-import com.hawk.company_staff_manage.test.service.TestService;
+import com.hawk.company_staff_manage.staff.service.StaffService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -17,16 +17,14 @@ import org.apache.shiro.subject.PrincipalCollection;
 import javax.annotation.Resource;
 
 /**
- * @author wsHawk
- * @Title: UserRealm
- * @ProjectName company-staff-manage
- * @Description: TODO
- * @since 2021/9/19 14:44
+ * @author hawk
+ * @desc 用户登录验证
+ * @date 2021/9/19 14:44
  */
 @Slf4j
-public class UserRealm extends AuthorizingRealm {
+public class StaffRealm extends AuthorizingRealm {
     @Resource
-    TestService testService;
+    StaffService staffService;
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         log.info("执行授权");
@@ -44,7 +42,7 @@ public class UserRealm extends AuthorizingRealm {
                 .eq(Staff::getStaffNo, token.getUsername())
                 .eq(Staff::getEnabledFlag, Constants.ENABLED);
 
-        Staff staff = testService.getOne(queryWrapper);
+        Staff staff = staffService.getOne(queryWrapper);
 
         if(staff == null){
             throw new BizException(RP.LOGIN_FAILED);

@@ -10,11 +10,8 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Map;
 
 /**
- * @author wsHawk
- * @Title: ShiroConfig
- * @ProjectName company-staff-manage
- * @Description: TODO
- * @since 2021/9/19 14:49
+ * @author hawk
+ * @date 2021/9/19
  */
 @Configuration
 public class ShiroConfig {
@@ -42,15 +39,15 @@ public class ShiroConfig {
         return bean;
     }
     @Bean
-    public DefaultWebSecurityManager getDefaultWebSecurityManager(@Qualifier("userRealm") UserRealm userRealm){
+    public DefaultWebSecurityManager getDefaultWebSecurityManager(@Qualifier("staffRealm") StaffRealm staffRealm){
         DefaultWebSecurityManager securityManager=new DefaultWebSecurityManager();
         //关联realm对象
-        securityManager.setRealm(userRealm);
+        securityManager.setRealm(staffRealm);
         return securityManager;
     }
     //创建realm对象 需要自定义类
     @Bean
-    public UserRealm userRealm(){
-        return new UserRealm();
+    public StaffRealm staffRealm(){
+        return new StaffRealm();
     }
 }

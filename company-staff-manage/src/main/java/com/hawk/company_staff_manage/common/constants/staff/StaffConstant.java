@@ -1,11 +1,9 @@
 package com.hawk.company_staff_manage.common.constants.staff;
 
 /**
- * @author wsHawk
- * @Title: StaffConstant
- * @ProjectName company-staff-manage
- * @Description: TODO
- * @since 2021/9/19 15:47
+ * @author hawk
+ * @desc 员工常量类
+ * @date 2021/9/19
  */
 public class StaffConstant {
     /**

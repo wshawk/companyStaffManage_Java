@@ -4,7 +4,7 @@ package com.hawk.company_staff_manage.common.constants;
  * @author wsHawk
  * @Title: Constants
  * @ProjectName company-staff-manage
- * @Description: TODO
+ * @Description: 全局常量类
  * @since 2021/9/19 14:57
  */
 public class Constants {
