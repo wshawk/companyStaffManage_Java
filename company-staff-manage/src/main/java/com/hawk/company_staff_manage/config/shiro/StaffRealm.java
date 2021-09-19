@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.hawk.company_staff_manage.common.constants.Constants;
 import com.hawk.company_staff_manage.common.RP;
 import com.hawk.company_staff_manage.common.constants.staff.StaffConstant;
-import com.hawk.company_staff_manage.common.entity.staff.Staff;
+import com.hawk.company_staff_manage.staff.entity.Staff;
 import com.hawk.company_staff_manage.common.exception.BizException;
 import com.hawk.company_staff_manage.staff.service.StaffService;
 import lombok.extern.slf4j.Slf4j;

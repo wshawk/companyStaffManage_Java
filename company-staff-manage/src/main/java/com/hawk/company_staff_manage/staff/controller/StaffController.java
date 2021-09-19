@@ -1,13 +1,9 @@
 package com.hawk.company_staff_manage.staff.controller;
 
 import com.hawk.company_staff_manage.common.R;
-import com.hawk.company_staff_manage.common.RP;
-import com.hawk.company_staff_manage.common.entity.staff.Staff;
+import com.hawk.company_staff_manage.staff.entity.Staff;
 import com.hawk.company_staff_manage.staff.service.StaffService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.subject.Subject;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,18 +24,13 @@ public class StaffController {
     @Resource
     StaffService staffService;
 
-    @PostMapping("/toLogin")
+    @PostMapping("/login")
     public R<Boolean> login(@RequestBody Staff staff){
-        if (staff == null || staff.getStaffNo() == null || staff.getPassword() == null){
-            return R.fail(RP.REQUEST_FIELD_ERROR);
-        }
-        //获取当前用户
-        Subject subject= SecurityUtils.getSubject();
-        //封装当前用户数据
-        UsernamePasswordToken token = new UsernamePasswordToken(staff.getStaffNo(), staff.getPassword());
-        //执行登录方法
-        subject.login(token);
+        return staffService.login(staff);
+    }
 
-        return R.success(Boolean.TRUE);
+    @PostMapping("/add")
+    public R<Boolean> add(@RequestBody Staff staff){
+        return staffService.add(staff);
     }
 }

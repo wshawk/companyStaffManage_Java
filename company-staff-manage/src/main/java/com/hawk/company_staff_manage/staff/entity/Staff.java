@@ -1,4 +1,4 @@
-package com.hawk.company_staff_manage.common.entity.staff;
+package com.hawk.company_staff_manage.staff.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -8,11 +8,8 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 /**
- * @author wsHawk
- * @Title: User
- * @ProjectName company-staff-manage
- * @Description: TODO
- * @since 2021/7/20 23:49
+ * @author hawk
+ * @date 2021/7/20 23:49
  */
 @Data
 @TableName("staff")

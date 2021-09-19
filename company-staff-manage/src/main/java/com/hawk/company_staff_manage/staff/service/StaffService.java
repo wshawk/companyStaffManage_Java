@@ -1,7 +1,8 @@
 package com.hawk.company_staff_manage.staff.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.hawk.company_staff_manage.common.entity.staff.Staff;
+import com.hawk.company_staff_manage.common.R;
+import com.hawk.company_staff_manage.staff.entity.Staff;
 
 /**
  * @author hawk
@@ -10,4 +11,7 @@ import com.hawk.company_staff_manage.common.entity.staff.Staff;
  */
 public interface StaffService extends IService<Staff> {
 
+    R<Boolean> add(Staff staff);
+
+    R<Boolean> login(Staff staff);
 }
