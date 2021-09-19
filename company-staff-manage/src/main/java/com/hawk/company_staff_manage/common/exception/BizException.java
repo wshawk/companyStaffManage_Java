@@ -1,4 +1,4 @@
-package com.hawk.company_staff_manage.common;
+package com.hawk.company_staff_manage.common.exception;
 
 /**
  * @author hawk

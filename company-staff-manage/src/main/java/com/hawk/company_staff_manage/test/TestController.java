@@ -1,6 +1,8 @@
 package com.hawk.company_staff_manage.test;
 
 import com.hawk.company_staff_manage.common.R;
+import com.hawk.company_staff_manage.common.RP;
+import com.hawk.company_staff_manage.common.exception.BizException;
 import com.hawk.company_staff_manage.test.service.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +32,7 @@ public class TestController {
 
     @RequestMapping("/get_staff_no")
     public R<String> getStaffNo(){
-        return R.success(testService.getById(1L).getStaffNo());
+        throw new BizException(RP.ACCOUNT_IS_DISABLED);
+//        return R.success(testService.getById(1L).getStaffNo());
     }
 }

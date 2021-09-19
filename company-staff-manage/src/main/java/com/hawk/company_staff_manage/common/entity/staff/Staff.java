@@ -26,11 +26,11 @@ public class Staff {
     /**
      * 个人基础信息表id
      */
-    private Long staffBaseInfoId;
+    private Long baseInfoId;
     /**
      * 公司任职信息表id
      */
-    private Long staffCompanyInfoId;
+    private Long companyInfoId;
     /**
      * 密码
      */

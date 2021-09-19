@@ -22,8 +22,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 CREATE TABLE `staff` (
                         `id` bigint NOT NULL AUTO_INCREMENT COMMENT '主键，自动生成',
                         `staff_no` bigint DEFAULT NULL COMMENT '员工账号',
-                        `staff_base_info_id` bigint DEFAULT NULL COMMENT '个人基础信息表id',
-                        `staff_company_info_id` bigint DEFAULT NULL COMMENT '公司个人任职信息表id',
+                        `base_info_id` bigint DEFAULT NULL COMMENT '个人基础信息表id',
+                        `company_info_id` bigint DEFAULT NULL COMMENT '公司个人任职信息表id',
                         `password` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '用户密码',
                         `role_id` int DEFAULT NULL COMMENT '角色表id',
                         `create_time` datetime DEFAULT NULL COMMENT '创建时间',
