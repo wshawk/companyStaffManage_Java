@@ -2,11 +2,16 @@ package com.hawk.company_staff_manage.common;
 
 import com.hawk.company_staff_manage.common.exception.BizException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author hawk
@@ -55,5 +60,12 @@ public class GlobalExceptionHandler {
             return R.fail(bizException.getErrorCode(), bizException.getErrorMsg());
         }
         return R.fail(RP.FAIL);
+    }
+
+    //后端校验异常
+    @ExceptionHandler(value = MethodArgumentNotValidException.class)
+    @ResponseBody
+    public <T> R<T> handValidException(MethodArgumentNotValidException e){
+        return R.fail(Objects.requireNonNull(e.getBindingResult().getFieldError()).getDefaultMessage());
     }
 }

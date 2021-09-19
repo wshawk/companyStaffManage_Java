@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hawk.company_staff_manage.common.R;
 import com.hawk.company_staff_manage.common.RP;
 import com.hawk.company_staff_manage.staff.entity.Staff;
+import com.hawk.company_staff_manage.staff.entity.vo.StaffVO;
 import com.hawk.company_staff_manage.staff.mapper.StaffMapper;
 import com.hawk.company_staff_manage.staff.service.StaffService;
 import org.apache.shiro.SecurityUtils;
@@ -20,15 +21,12 @@ import org.springframework.stereotype.Service;
 public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements StaffService {
 
     @Override
-    public R<Boolean> add(Staff staff) {
+    public R<Boolean> add(StaffVO staff) {
         return null;
     }
 
     @Override
-    public R<Boolean> login(Staff staff) {
-        if (staff == null || staff.getStaffNo() == null || staff.getPassword() == null){
-            return R.fail(RP.REQUEST_FIELD_ERROR);
-        }
+    public R<Boolean> login(StaffVO staff) {
         //获取当前用户
         Subject subject= SecurityUtils.getSubject();
         //封装当前用户数据

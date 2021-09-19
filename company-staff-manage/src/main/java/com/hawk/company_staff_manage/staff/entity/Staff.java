@@ -21,13 +21,13 @@ public class Staff {
      */
     private String staffNo;
     /**
-     * 个人基础信息表id
+     * 姓名
      */
-    private Long baseInfoId;
+    private String name;
     /**
-     * 公司任职信息表id
+     * 性别 0-男，1-女
      */
-    private Long companyInfoId;
+    private Integer gender;
     /**
      * 密码
      */
