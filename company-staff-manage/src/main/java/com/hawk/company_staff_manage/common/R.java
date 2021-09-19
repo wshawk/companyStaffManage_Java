@@ -27,7 +27,7 @@ public final class R<T> implements Serializable {
     /**
      * 结果
      */
-    private Object data;
+    private T data;
 
     private R(){
 
@@ -37,33 +37,33 @@ public final class R<T> implements Serializable {
         this.msg = msg;
     }
 
-    private R(int code, String msg, Object data){
+    private R(int code, String msg, T data){
         this.code = code;
         this.msg = msg;
         this.data = data;
     }
     public static <T> R<T> success(){
-        return new R(SUCCESS_CODE, SUCCESS_MESSAGE,null);
+        return new R<>(SUCCESS_CODE, SUCCESS_MESSAGE, null);
     }
 
-    public static <T> R<T> success(Object data){
-        return new R(SUCCESS_CODE,SUCCESS_MESSAGE,data);
+    public static <T> R<T> success(T data){
+        return new R<>(SUCCESS_CODE,SUCCESS_MESSAGE,data);
     }
 
     public static <T> R<T> fail(){
-        return new R(FAIL_CODE, FAIL_MESSAGE, null);
+        return new R<>(FAIL_CODE, FAIL_MESSAGE, null);
     }
 
     public static <T> R<T> fail(String errorMessage){
-        return new R(FAIL_CODE, errorMessage,null);
+        return new R<>(FAIL_CODE, errorMessage,null);
     }
 
     public static <T> R<T> fail(int code, String errorMessage){
-        return new R(code, errorMessage,null);
+        return new R<>(code, errorMessage,null);
     }
 
     public static <T> R<T> fail(RP rp){
-        return new R(rp.getCode(), rp.getMsg(),null);
+        return new R<>(rp.getCode(), rp.getMsg(),null);
     }
     @Override
     public String toString() {
@@ -102,7 +102,7 @@ public final class R<T> implements Serializable {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(T data) {
         this.data = data;
     }
 }
