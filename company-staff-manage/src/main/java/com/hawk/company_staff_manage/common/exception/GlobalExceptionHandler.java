@@ -1,11 +1,17 @@
-package com.hawk.company_staff_manage.common;
+package com.hawk.company_staff_manage.common.exception;
 
+import com.hawk.company_staff_manage.common.R;
+import com.hawk.company_staff_manage.common.RP;
 import com.hawk.company_staff_manage.common.exception.BizException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.validation.BindException;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.Objects;
 
@@ -18,10 +24,16 @@ import java.util.Objects;
 @Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
-    @ExceptionHandler(value = BizException.class)
+    /**
+     * 业务异常处理
+     * @param e 业务异常
+     * @param <T> 返回结果
+     * @return {@link R <T>}
+     */
     @ResponseBody
-    public <T> R<T> bizExceptionHandler( BizException e) {
+    @ResponseStatus(value = HttpStatus.OK)
+    @ExceptionHandler(value = BizException.class)
+    public <T> R<T> bizExceptionHandler(BizException e) {
         log.error("业务异常| 错误码: {}, 提示信息: {}", e.getErrorCode(), e.getErrorMsg());
         return R.fail(e.getErrorCode(), e.getErrorMsg());
     }
@@ -32,8 +44,9 @@ public class GlobalExceptionHandler {
      * @param e   e
      * @return {@link R<T>}
      */
-    @ExceptionHandler(value = NullPointerException.class)
     @ResponseBody
+    @ResponseStatus(value = HttpStatus.OK)
+    @ExceptionHandler(value = NullPointerException.class)
     public <T> R<T> exceptionHandler(NullPointerException e) {
         log.error("空指针异常, 可能出错的位置: {}", e.getCause().toString());
         return R.fail(RP.NULL_POINTER_ERROR);
@@ -44,22 +57,16 @@ public class GlobalExceptionHandler {
      * @param e   e
      * @return {@link R<T>}
      */
-    @ExceptionHandler(value = Exception.class)
     @ResponseBody
+    @ResponseStatus(value = HttpStatus.OK)
+    @ExceptionHandler(value = Exception.class)
     public <T> R<T> exceptionHandler(Exception e) {
-         log.error("系统错误: ", e);
-        if (e.getCause() instanceof  BizException){
-            BizException bizException = (BizException) e.getCause();
-            log.error("业务异常| 错误码: {}, 提示信息: {}",   bizException.getErrorCode(), bizException.getErrorMsg());
+        if (e instanceof  BizException){
+            BizException bizException = (BizException) e;
+            log.error("业务异常| 错误码: {}, 提示信息: {}", bizException.getErrorCode(), bizException.getErrorMsg());
             return R.fail(bizException.getErrorCode(), bizException.getErrorMsg());
         }
+        log.error("系统错误: ", e);
         return R.fail(RP.FAIL);
-    }
-
-    //后端校验异常
-    @ExceptionHandler(value = MethodArgumentNotValidException.class)
-    @ResponseBody
-    public <T> R<T> handValidException(MethodArgumentNotValidException e){
-        return R.fail(Objects.requireNonNull(e.getBindingResult().getFieldError()).getDefaultMessage());
     }
 }
