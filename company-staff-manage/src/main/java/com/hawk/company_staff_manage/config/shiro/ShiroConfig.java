@@ -17,8 +17,8 @@ import java.util.Map;
 public class ShiroConfig {
     @Bean
     //如果我们在某个注入点需要另一个 bean，我们需要专门指出它。我们可以通过 @Qualifier 注解来做到这一点。
-    public ShiroFilterFactoryBean getShiroFilterFactoryBean(@Qualifier("getDefaultWebSecurityManager") DefaultWebSecurityManager defaultWebSecurityManager){
-        ShiroFilterFactoryBean bean=new ShiroFilterFactoryBean();
+    public ShiroFilterFactoryBean getShiroFilterFactoryBean(@Qualifier("getDefaultWebSecurityManager") DefaultWebSecurityManager defaultWebSecurityManager) {
+        ShiroFilterFactoryBean bean = new ShiroFilterFactoryBean();
         //设置安全管理器
         bean.setSecurityManager(defaultWebSecurityManager);
         //添加过滤器
@@ -31,23 +31,28 @@ public class ShiroConfig {
         role: 拥有某个角色权限才能访问
         */
 
-        filterMap.put("/*","authc");
+        filterMap.put("/*", "authc");
         bean.setFilterChainDefinitionMap(filterMap);
         //设置登录请求
         bean.setLoginUrl("/toLogin");
         bean.setUnauthorizedUrl("/nonAuth");
         return bean;
     }
+
     @Bean
-    public DefaultWebSecurityManager getDefaultWebSecurityManager(@Qualifier("staffRealm") StaffRealm staffRealm){
-        DefaultWebSecurityManager securityManager=new DefaultWebSecurityManager();
+    public DefaultWebSecurityManager getDefaultWebSecurityManager(@Qualifier("staffRealm") StaffRealm staffRealm) {
+        DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         //关联realm对象
         securityManager.setRealm(staffRealm);
         return securityManager;
     }
-    //创建realm对象 需要自定义类
+
+    /**
+     * 注入realm对象
+     * @return @link{StaffRealm}
+     */
     @Bean
-    public StaffRealm staffRealm(){
+    public StaffRealm staffRealm() {
         return new StaffRealm();
     }
 }

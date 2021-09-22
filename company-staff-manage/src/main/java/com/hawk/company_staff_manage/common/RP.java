@@ -44,20 +44,23 @@ public enum RP implements BaseError {
      * 20102-该账号已被锁定
      */
     ACCOUNT_IS_LOCKED(20102, "该账号已被锁定"),
-;
+    ;
     @Setter
     private int code;
     @Setter
     private String msg;
+
     @Override
-    public int getCode(){
+    public int getCode() {
         return this.code;
     }
+
     @Override
-    public String getMsg(){
+    public String getMsg() {
         return this.msg;
     }
-    RP(int code, String msg){
+
+    RP(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }

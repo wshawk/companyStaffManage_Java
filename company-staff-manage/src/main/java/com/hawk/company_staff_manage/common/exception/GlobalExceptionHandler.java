@@ -26,7 +26,8 @@ import java.util.Objects;
 public class GlobalExceptionHandler {
     /**
      * 业务异常处理
-     * @param e 业务异常
+     *
+     * @param e   业务异常
      * @param <T> 返回结果
      * @return {@link R <T>}
      */
@@ -41,7 +42,7 @@ public class GlobalExceptionHandler {
     /**
      * 空指针异常处理程序
      *
-     * @param e   e
+     * @param e e
      * @return {@link R<T>}
      */
     @ResponseBody
@@ -51,17 +52,18 @@ public class GlobalExceptionHandler {
         log.error("空指针异常, 可能出错的位置: {}", e.getCause().toString());
         return R.fail(RP.NULL_POINTER_ERROR);
     }
+
     /**
      * 其他异常处理程序
      *
-     * @param e   e
+     * @param e e
      * @return {@link R<T>}
      */
     @ResponseBody
     @ResponseStatus(value = HttpStatus.OK)
     @ExceptionHandler(value = Exception.class)
     public <T> R<T> exceptionHandler(Exception e) {
-        if (e instanceof  BizException){
+        if (e instanceof BizException) {
             BizException bizException = (BizException) e;
             log.error("业务异常| 错误码: {}, 提示信息: {}", bizException.getErrorCode(), bizException.getErrorMsg());
             return R.fail(bizException.getErrorCode(), bizException.getErrorMsg());

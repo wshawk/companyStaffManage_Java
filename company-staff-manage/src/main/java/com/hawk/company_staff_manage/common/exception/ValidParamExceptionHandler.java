@@ -26,13 +26,14 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ValidParamExceptionHandler {
     /**
      * 入参校验异常
-     * @param e MethodArgumentNotValidException
+     *
+     * @param e   MethodArgumentNotValidException
      * @param <T> 返回结果
      */
     @ResponseBody
     @ResponseStatus(value = HttpStatus.OK)
     @ExceptionHandler(value = {MethodArgumentNotValidException.class, BindException.class})
-    public <T> R<T> handValidException(Exception e){
+    public <T> R<T> handValidException(Exception e) {
         BindingResult bindingResult = null;
         if (e instanceof MethodArgumentNotValidException) {
             bindingResult = ((MethodArgumentNotValidException) e).getBindingResult();
@@ -40,7 +41,7 @@ public class ValidParamExceptionHandler {
             bindingResult = ((BindException) e).getBindingResult();
         }
         String errorMessage = RP.REQUEST_FIELD_ERROR.getMsg();
-        if (bindingResult != null && bindingResult.hasFieldErrors()){
+        if (bindingResult != null && bindingResult.hasFieldErrors()) {
             errorMessage = bindingResult.getFieldErrors().get(0).getDefaultMessage();
         }
 

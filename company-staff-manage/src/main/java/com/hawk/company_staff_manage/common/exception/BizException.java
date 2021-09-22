@@ -6,7 +6,7 @@ package com.hawk.company_staff_manage.common.exception;
  * @desc 自定义业务异常类
  * @date 2021/7/21
  */
-public class BizException extends RuntimeException{
+public class BizException extends RuntimeException {
     /**
      * 错误代码
      */

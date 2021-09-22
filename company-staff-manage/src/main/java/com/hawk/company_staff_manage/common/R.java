@@ -29,42 +29,45 @@ public final class R<T> implements Serializable {
      */
     private T data;
 
-    private R(){
+    private R() {
 
     }
-    private R(int code, String msg){
+
+    private R(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }
 
-    private R(int code, String msg, T data){
+    private R(int code, String msg, T data) {
         this.code = code;
         this.msg = msg;
         this.data = data;
     }
-    public static <T> R<T> success(){
+
+    public static <T> R<T> success() {
         return new R<>(SUCCESS_CODE, SUCCESS_MESSAGE, null);
     }
 
-    public static <T> R<T> success(T data){
-        return new R<>(SUCCESS_CODE,SUCCESS_MESSAGE,data);
+    public static <T> R<T> success(T data) {
+        return new R<>(SUCCESS_CODE, SUCCESS_MESSAGE, data);
     }
 
-    public static <T> R<T> fail(){
+    public static <T> R<T> fail() {
         return new R<>(FAIL_CODE, FAIL_MESSAGE, null);
     }
 
-    public static <T> R<T> fail(String errorMessage){
-        return new R<>(FAIL_CODE, errorMessage,null);
+    public static <T> R<T> fail(String errorMessage) {
+        return new R<>(FAIL_CODE, errorMessage, null);
     }
 
-    public static <T> R<T> fail(int code, String errorMessage){
-        return new R<>(code, errorMessage,null);
+    public static <T> R<T> fail(int code, String errorMessage) {
+        return new R<>(code, errorMessage, null);
     }
 
-    public static <T> R<T> fail(RP rp){
-        return new R<>(rp.getCode(), rp.getMsg(),null);
+    public static <T> R<T> fail(RP rp) {
+        return new R<>(rp.getCode(), rp.getMsg(), null);
     }
+
     @Override
     public String toString() {
         return "{" +
@@ -74,11 +77,11 @@ public final class R<T> implements Serializable {
                 '}';
     }
 
-    public boolean checkSuccess(){
+    public boolean checkSuccess() {
         return this.code == SUCCESS_CODE;
     }
 
-    public boolean checkFailure(){
+    public boolean checkFailure() {
         return !checkSuccess();
     }
 
