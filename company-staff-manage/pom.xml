@@ -17,7 +17,7 @@
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <mybatis-plus.version>3.4.3.1</mybatis-plus.version>
         <mybatis-plus.starter.version>3.4.3.1</mybatis-plus.starter.version>
-        <mysql-connect.version>8.0.25</mysql-connect.version>
+        <mysql-connect.version>8.0.28</mysql-connect.version>
         <druid.version>1.2.6</druid.version>
         <lombok.version>1.18.20</lombok.version>
         <shiro.version>1.7.1</shiro.version>
